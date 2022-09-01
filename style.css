@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: "Signika Negative", sans-serif;
+}
+
+.navDiv {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  position: fixed;
+  background-color: #ff9f4a;
+  box-shadow: 0 0 10px #fd297a;
+}
+.navDiv > nav {
+  width: 90%;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff9f4a;
+}
+
+.navIcon > img {
+  width: 75px;
+  height: 75px;
+  margin-left: 10px;
+}
+
+.navDiv ul li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.navDiv ul li a:hover::before {
+  width: 100%;
+  animation: animateBefore 0.2s linear;
+}
+.navDiv ul li a:hover::after {
+  width: 100%;
+  animation: animateAfter 0.2s linear;
+}
+
+@keyframes animateBefore {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes animateAfter {
+  0% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.navDiv ul li a::after {
+  bottom: 0;
+  content: "";
+  height: 2px;
+  position: absolute;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+.navDiv ul li a::before {
+  top: 0;
+  content: "";
+  height: 2px;
+  position: absolute;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+
+.navDiv ul li a {
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  transition: all 0.5s linear;
+}
+.mobileMenu {
+  display: none !important;
+}
+
+.content img {
+  margin-top: 500px;
+}
+.navIcon {
+  display: flex;
+}
+.content {
+  padding-top: 80px;
+  background-color: black;
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 660px) {
+  .navDiv {
+    position: fixed;
+    height: auto;
+    width: 100%;
+    box-shadow: 0 0 10px #0000001f;
+  }
+  .navDiv > nav {
+    /* height: auto; */
+    width: 100%;
+    align-items: flex-start;
+  }
+  .navDiv ul {
+    transition: all 0.5s linear;
+    width: 100%;
+    display: none;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+  }
+  .navDiv ul li {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .navDiv ul li a {
+    color: #fff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    transition: all 0.5s linear;
+  }
+  .mobileMenu {
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: 30px; */
+    display: block !important;
+  }
+  .navIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+  }
+  .showMobileMenu {
+    display: flex !important;
+    transition: all 0.5s linear;
+  }
+}
